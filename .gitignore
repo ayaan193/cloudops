@@ -21,3 +21,7 @@ venv/
 # Build artifacts
 dist/
 build/
+
+# Compiled binaries
+/bin/cluster-doctor
+*.test
