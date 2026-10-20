@@ -62,6 +62,7 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t cloudops-ai:ci .
+
   publish:
     name: Publish image to GHCR
     needs: validate
@@ -96,4 +97,3 @@ jobs:
             ghcr.io/ayaan193/cloudops:${{ github.sha }}
           labels: |
             org.opencontainers.image.source=https://github.com/ayaan193/cloudops
-
