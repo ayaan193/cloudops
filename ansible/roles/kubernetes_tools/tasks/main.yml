@@ -1,0 +1,18 @@
+---
+- name: Check kubectl
+  ansible.builtin.command:
+    argv: ["kubectl", "version", "--client"]
+  register: kubectl_check
+  changed_when: false
+
+- name: Check Kind
+  ansible.builtin.command:
+    argv: ["kind", "--version"]
+  register: kind_check
+  changed_when: false
+
+- name: Display Kubernetes tooling versions
+  ansible.builtin.debug:
+    msg:
+      - "{{ kubectl_check.stdout }}"
+      - "{{ kind_check.stdout }}"

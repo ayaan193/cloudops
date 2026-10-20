@@ -1,0 +1,9 @@
+---
+- name: Prepare and inspect CloudOps AI host
+  hosts: cloudops_hosts
+  gather_facts: true
+
+  roles:
+    - common
+    - container_tools
+    - kubernetes_tools

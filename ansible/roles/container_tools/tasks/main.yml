@@ -1,0 +1,10 @@
+---
+- name: Check Docker version
+  ansible.builtin.command:
+    argv: ["docker", "--version"]
+  register: docker_check
+  changed_when: false
+
+- name: Display Docker version
+  ansible.builtin.debug:
+    var: docker_check.stdout

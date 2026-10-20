@@ -1,0 +1,6 @@
+apiVersion: v2
+name: cloudops-api
+description: Kubernetes operations and diagnostics API
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

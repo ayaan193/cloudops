@@ -1,0 +1,14 @@
+---
+- name: Verify supported operating system
+  ansible.builtin.assert:
+    that:
+      - ansible_facts['distribution'] == 'Ubuntu'
+    fail_msg: "This playbook currently expects Ubuntu."
+    success_msg: "Ubuntu host detected."
+
+- name: Display host information
+  ansible.builtin.debug:
+    msg: >-
+      {{ ansible_facts['distribution'] }}
+      {{ ansible_facts['distribution_version'] }},
+      {{ ansible_facts['memtotal_mb'] }} MB RAM
